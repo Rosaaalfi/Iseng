@@ -1,287 +1,250 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aniko & SMOLNANGY — Identity Card</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Aniko & SMOLNANGY | Identity</title>
+  <meta name="title" content="Aniko & SMOLNANGY | Identity">
+  <meta name="description" content="Single by choice, bug by destiny 💀. Programming, Vibe Coding, Reverse Engineering.">
+  <meta name="theme-color" content="#4afa8a">
 
-  <!-- ===== Discord / OpenGraph Embed ===== -->
-  <meta property="og:type"        content="profile" />
-  <meta property="og:title"       content="Aniko &amp; SMOLNANGY" />
-  <meta property="og:description" content="Single by choice, bug by destiny 💀 | Sleep? optional. Debug? mandatory 🔥 | Commit tiap hari, relationship nanti dulu 😌" />
-  <meta property="og:url"         content="https://identity.chyxelmc.me/" />
-  <meta property="og:image"       content="https://identity.chyxelmc.me/card.png" />
-  <meta property="og:image:width"  content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name"   content="Aniko · Identity.kt" />
-  <meta name="theme-color"        content="#4afa8a" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://identity.chyxelmc.me"> <meta property="og:title" content="Aniko & SMOLNANGY">
+  <meta property="og:description" content="Single by choice, bug by destiny 💀 | try { survive() } catch (e: Exception) { ngopi() } ☕">
+  <meta property="og:image" content="https://i1.ruliweb.com/ori/25/12/20/19b3bfd26e8486065.jpg">
 
-  <!-- Twitter Card (also shows in many Discord embeds) -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Aniko &amp; SMOLNANGY" />
-  <meta name="twitter:description" content="Trusted by compiler, betrayed by runtime. Hidup = try { survive() } catch (e: Exception) { ngopi() } ☕" />
-  <meta name="twitter:image"       content="https://identity.chyxelmc.me/card.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Aniko & SMOLNANGY">
+  <meta property="twitter:description" content="Single by choice, bug by destiny 💀 | try { survive() } catch (e: Exception) { ngopi() } ☕">
+  <meta property="twitter:image" content="https://i1.ruliweb.com/ori/25/12/20/19b3bfd26e8486065.jpg">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap');
 
-    :root {
-      --green:   #4afa8a;
-      --green-d: #1ed860;
-      --bg:      #0b0b0b;
-      --surface: #141414;
-      --surface2:#1c1c1c;
-      --border:  #2a2a2a;
-      --text:    #e8e8e8;
-      --muted:   #666;
-      --radius:  16px;
-    }
-
-    html, body {
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      background-color: #050505; /* Background utama jadi gelap */
       min-height: 100vh;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Syne', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem 1rem;
     }
 
-    /* subtle grid bg */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(74,250,138,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(74,250,138,.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .wrapper {
-      position: relative;
-      z-index: 1;
+    .card-wrap {
+      font-family: 'Space Grotesk', sans-serif;
       width: 100%;
-      max-width: 500px;
-    }
-
-    /* ── CARD ── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      max-width: 520px;
+      background: #121212; /* Dark mode card background */
+      border: 1px solid #2a2a2a;
+      border-radius: 20px;
       overflow: hidden;
-      animation: cardIn .6s cubic-bezier(.22,1,.36,1) both;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
-    @keyframes cardIn {
-      from { opacity:0; transform: translateY(24px) scale(.97); }
-      to   { opacity:1; transform: translateY(0) scale(1); }
+    
+    .card-header {
+      background: #0d0d0d;
+      padding: 2rem 2rem 1.5rem;
+      position: relative;
     }
-
-    /* header terminal */
-    .header {
-      background: #080808;
-      padding: 1.25rem 1.5rem 1.25rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .dots {
-      display: flex; gap: 6px; margin-bottom: 1rem;
+    
+    .terminal-dots {
+      display: flex; gap: 6px; margin-bottom: 1.2rem;
     }
     .dot { width: 10px; height: 10px; border-radius: 50%; }
     .dot-r { background: #ff5f57; }
     .dot-y { background: #febc2e; }
     .dot-g { background: #28c840; }
-
-    .cmd {
+    
+    .cmd-line {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      color: var(--green);
-      opacity: .65;
-      margin-bottom: 4px;
+      color: #4afa8a;
+      margin-bottom: 0.3rem;
+      opacity: 0.7;
     }
-    .cmd span { color: #888; }
-
+    
     .avatar-row {
-      display: flex; align-items: center; gap: 1rem; margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.8rem;
     }
+    
     .avatar {
-      width: 58px; height: 58px;
+      width: 56px; height: 56px;
       border-radius: 14px;
-      background: conic-gradient(from 135deg, #4afa8a, #00c9ff, #4afa8a);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 700; font-size: 18px; color: #0b0b0b;
+      /* Menggunakan image dari URL yang diberikan */
+      background-image: url('https://i1.ruliweb.com/ori/25/12/20/19b3bfd26e8486065.jpg');
+      background-size: cover;
+      background-position: center;
       flex-shrink: 0;
-      animation: spin-border 4s linear infinite;
+      border: 1px solid #2a2a2a;
     }
-    @keyframes spin-border {
-      from { filter: hue-rotate(0deg); }
-      to   { filter: hue-rotate(360deg); }
+    
+    .name-main {
+      font-size: 19px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+      line-height: 1.2;
     }
-
-    .name { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -.5px; }
-    .handle {
+    .name-sub {
+      font-size: 12px;
+      color: #4afa8a;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: var(--green); margin-top: 3px; opacity: .8;
+      margin-top: 2px;
     }
-
-    /* body */
-    .body { padding: 1.4rem 1.5rem 1.6rem; }
-
+    
+    .card-body {
+      padding: 1.5rem 2rem 2rem;
+    }
+    
     .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--muted); margin-bottom: .6rem;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #888888;
+      margin-bottom: 0.6rem;
     }
-
+    
     .meta-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1.2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 1.4rem;
     }
     .meta-item {
-      background: var(--surface2);
-      border: 1px solid var(--border);
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
       border-radius: 10px;
-      padding: .55rem .8rem;
+      padding: 0.6rem 0.8rem;
     }
     .meta-key {
+      font-size: 10px;
+      color: #888888;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 9px; color: var(--muted); margin-bottom: 3px;
+      margin-bottom: 2px;
     }
-    .meta-val { font-size: 13px; font-weight: 700; color: var(--text); }
-
-    .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.2rem; }
+    .meta-val {
+      font-size: 13px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+    
+    .hobby-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1.4rem;
+    }
+    
     .badge {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; font-weight: 700;
-      padding: 4px 10px; border-radius: 99px;
-      background: rgba(74,250,138,.1);
-      border: 1px solid rgba(74,250,138,.25);
-      color: var(--green);
-      transition: background .2s, transform .15s;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-weight: 700;
+      border: 1px solid;
     }
-    .badge:hover { background: rgba(74,250,138,.2); transform: translateY(-1px); }
-
-    .status-list { display: flex; flex-direction: column; gap: 7px; }
+    
+    /* Dark mode optimized badge */
+    .badge-green {
+      background: #04342c;
+      color: #9FE1CB;
+      border-color: #0f6e56;
+    }
+    
+    .status-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
     .status-item {
-      display: flex; align-items: flex-start; gap: 8px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-left: 2.5px solid var(--green);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-left: 2.5px solid #4afa8a;
       border-radius: 8px;
-      padding: .55rem .85rem;
+      padding: 0.55rem 0.8rem;
+      font-size: 12.5px;
+      color: #e0e0e0;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11.5px; line-height: 1.55;
-      color: var(--text);
-      opacity: 0;
-      animation: slideIn .4s ease both;
+      line-height: 1.5;
+      animation: fadeSlide 0.4s ease both;
     }
-    .status-item:nth-child(1) { animation-delay:.1s }
-    .status-item:nth-child(2) { animation-delay:.18s }
-    .status-item:nth-child(3) { animation-delay:.26s }
-    .status-item:nth-child(4) { animation-delay:.34s }
-    .status-item:nth-child(5) { animation-delay:.42s }
-    .status-item:nth-child(6) { animation-delay:.50s }
-    @keyframes slideIn {
-      from { opacity:0; transform: translateX(-10px); }
-      to   { opacity:1; transform: translateX(0); }
+    
+    .status-item:nth-child(1) { animation-delay: 0.05s; }
+    .status-item:nth-child(2) { animation-delay: 0.10s; }
+    .status-item:nth-child(3) { animation-delay: 0.15s; }
+    .status-item:nth-child(4) { animation-delay: 0.20s; }
+    .status-item:nth-child(5) { animation-delay: 0.25s; }
+    .status-item:nth-child(6) { animation-delay: 0.30s; }
+    
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateX(-8px); }
+      to   { opacity: 1; transform: translateX(0); }
     }
-    .prefix { color: var(--green); opacity: .6; flex-shrink: 0; }
-
-    /* footer */
-    .footer {
-      background: #080808;
-      border-top: 1px solid var(--border);
-      padding: .65rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
+    
+    .prompt-prefix {
+      color: #4afa8a;
+      flex-shrink: 0;
+      font-size: 12px;
+    }
+    
+    .footer-bar {
+      background: #0d0d0d;
+      padding: 0.7rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .footer-mono {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 9.5px; color: var(--muted);
+      font-size: 10px;
+      color: #4afa8a;
+      opacity: 0.6;
     }
-    .pulse {
-      width: 7px; height: 7px; border-radius: 50%; background: var(--green);
+    .status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #4afa8a;
       animation: pulse 2s ease-in-out infinite;
     }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.2} }
-
-    /* embed copy box */
-    .embed-box {
-      margin-top: 1.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
-    .embed-header {
-      padding: .6rem 1rem;
-      background: #080808;
-      border-bottom: 1px solid var(--border);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; color: var(--muted);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .embed-header span { color: var(--green); }
-    .copy-btn {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      background: rgba(74,250,138,.1);
-      border: 1px solid rgba(74,250,138,.25);
-      color: var(--green);
-      padding: 3px 10px; border-radius: 6px; cursor: pointer;
-      transition: background .2s;
-    }
-    .copy-btn:hover { background: rgba(74,250,138,.2); }
-    .copy-btn.copied { color: #28c840; border-color: #28c840; }
-    .embed-code {
-      padding: .85rem 1rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px; color: #aaa;
-      word-break: break-all; line-height: 1.6;
-      white-space: pre-wrap;
-    }
-
-    /* tip */
-    .tip {
-      margin-top: .75rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px; color: var(--muted);
-      text-align: center; line-height: 1.6;
-    }
-    .tip a { color: var(--green); text-decoration: none; }
-    .tip a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-<div class="wrapper">
 
-  <!-- ═══════════ IDENTITY CARD ═══════════ -->
-  <div class="card" id="profile-card">
-    <div class="header">
-      <div class="dots">
+  <div class="card-wrap">
+    <div class="card-header">
+      <div class="terminal-dots">
         <div class="dot dot-r"></div>
         <div class="dot dot-y"></div>
         <div class="dot dot-g"></div>
       </div>
-      <div class="cmd">$ kotlin main.kt <span>--run identity</span></div>
-      <div class="cmd" style="opacity:.4; font-size:10px;">&gt; Identity compiled successfully ✓</div>
+      <div class="cmd-line">$ kotlin main.kt --run identity</div>
+      <div class="cmd-line" style="color:#888; font-size:10px;">> Identity compiled successfully ✓</div>
       <div class="avatar-row">
-        <div class="avatar">AN</div>
-        <div>
-          <div class="name">Aniko &amp; SMOLNANGY</div>
-          <div class="handle">data class Identity { ... }</div>
+        <div class="avatar"></div>
+        <div class="name-block">
+          <div class="name-main">Aniko &amp; SMOLNANGY</div>
+          <div class="name-sub">data class Identity { ... }</div>
         </div>
       </div>
     </div>
 
-    <div class="body">
-      <div class="section-label">// properties</div>
+    <div class="card-body">
+      <div class="section-label">Properties</div>
       <div class="meta-grid">
         <div class="meta-item">
           <div class="meta-key">val gender</div>
@@ -293,61 +256,29 @@
         </div>
       </div>
 
-      <div class="section-label">// val hobby: List&lt;String&gt;</div>
-      <div class="badges">
-        <span class="badge">Programming</span>
-        <span class="badge">Vibe Coding</span>
-        <span class="badge">Reverse Engineering</span>
+      <div class="section-label">val hobby: List&lt;String&gt;</div>
+      <div class="hobby-row">
+        <span class="badge badge-green">Programming</span>
+        <span class="badge badge-green">Vibe Coding</span>
+        <span class="badge badge-green">Reverse Engineering</span>
       </div>
 
-      <div class="section-label">// val status: List&lt;String&gt;</div>
+      <div class="section-label">val status: List&lt;String&gt;</div>
       <div class="status-list">
-        <div class="status-item"><span class="prefix">//</span> Single by choice, bug by destiny 💀</div>
-        <div class="status-item"><span class="prefix">//</span> Sleep? optional. Debug? mandatory 🔥</div>
-        <div class="status-item"><span class="prefix">//</span> Commit tiap hari, relationship nanti dulu 😌</div>
-        <div class="status-item"><span class="prefix">//</span> Trusted by compiler, betrayed by runtime</div>
-        <div class="status-item"><span class="prefix">//</span> Ngatain code orang jelek → buka code sendiri → silent update</div>
-        <div class="status-item"><span class="prefix">//</span> Hidup = try { survive() } catch (e: Exception) { ngopi() } ☕</div>
+        <div class="status-item"><span class="prompt-prefix">//</span> Single by choice, bug by destiny 💀</div>
+        <div class="status-item"><span class="prompt-prefix">//</span> Sleep? optional. Debug? mandatory 🔥</div>
+        <div class="status-item"><span class="prompt-prefix">//</span> Commit tiap hari, relationship nanti dulu 😌</div>
+        <div class="status-item"><span class="prompt-prefix">//</span> Trusted by compiler, betrayed by runtime</div>
+        <div class="status-item"><span class="prompt-prefix">//</span> Ngatain code orang jelek → buka code sendiri → silent update</div>
+        <div class="status-item"><span class="prompt-prefix">//</span> Hidup = try { survive() } catch (e: Exception) { ngopi() } ☕</div>
       </div>
     </div>
 
-    <div class="footer">
+    <div class="footer-bar">
       <span class="footer-mono">runtime: active | heap: unlimited | vibe: immaculate</span>
-      <div class="pulse"></div>
+      <div class="status-dot"></div>
     </div>
   </div>
 
-  <!-- ═══════════ DISCORD EMBED HELPER ═══════════ -->
-  <div class="embed-box">
-    <div class="embed-header">
-      <span>discord embed link</span>
-      <button class="copy-btn" id="copyBtn" onclick="copyLink()">copy</button>
-    </div>
-    <div class="embed-code" id="embedCode">https://identity.chyxelmc.me/</div>
-  </div>
-
-  <p class="tip">
-    Paste link ↑ langsung di Discord → auto embed.<br/>
-    Ganti domain ke GitHub Pages URL-mu setelah deploy.<br/>
-    Butuh preview image? generate <a href="#" onclick="alert('Gunakan tool seperti puppeteer atau screenshotapi.net untuk generate card.png')">card.png</a> dari halaman ini.
-  </p>
-
-</div>
-
-<script>
-  // Update embed URL to match current page
-  const url = window.location.href.split('?')[0];
-  document.getElementById('embedCode').textContent = url;
-
-  function copyLink() {
-    const url = document.getElementById('embedCode').textContent;
-    navigator.clipboard.writeText(url).then(() => {
-      const btn = document.getElementById('copyBtn');
-      btn.textContent = 'copied ✓';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 2000);
-    });
-  }
-</script>
 </body>
 </html>
