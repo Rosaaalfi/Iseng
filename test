@@ -1,0 +1,24 @@
+cd ~
+
+sudo apt update
+sudo apt install -y curl xz-utils libatomic1 build-essential
+
+curl -O https://nodejs.org/dist/v22.22.3/node-v22.22.3-linux-x64.tar.xz
+
+rm -rf node-v22.22.3-linux-x64
+tar -xf node-v22.22.3-linux-x64.tar.xz
+
+sudo rm -rf /opt/nodejs
+sudo mv node-v22.22.3-linux-x64 /opt/nodejs
+
+echo 'export PATH=/opt/nodejs/bin:$PATH' >> ~/.bashrc
+export PATH=/opt/nodejs/bin:$PATH
+
+hash -r
+
+node -v
+npm -v
+
+npm install -g pnpm
+
+pnpm -v
